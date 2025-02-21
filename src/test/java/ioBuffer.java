@@ -12,7 +12,7 @@ public class ioBuffer {
     void copy_pdf_to_another_pdf_buffer_stream() {
         // 记录开始时间
         long start = System.currentTimeMillis();
-        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("深入理解计算机操作系统.pdf")); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("深入理解计算机操作系统-副本.pdf"))) {
+        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("/resources/C++ The Ultimate Beginners Guide to Learn C++ Programming Step-by-Step (Reed, Mark) (Z-Library).epub")); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("copy.pdf"))) {
             int content;
             while ((content = bis.read()) != -1) {
                 bos.write(content);
@@ -29,7 +29,7 @@ public class ioBuffer {
     void copy_pdf_to_another_pdf_stream() {
         // 记录开始时间
         long start = System.currentTimeMillis();
-        try (FileInputStream fis = new FileInputStream("深入理解计算机操作系统.pdf"); FileOutputStream fos = new FileOutputStream("深入理解计算机操作系统-副本.pdf")) {
+        try (FileInputStream fis = new FileInputStream("/resources/C++ The Ultimate Beginners Guide to Learn C++ Programming Step-by-Step (Reed, Mark) (Z-Library).epub"); FileOutputStream fos = new FileOutputStream("copy.pdf")) {
             int content;
             while ((content = fis.read()) != -1) {
                 fos.write(content);
