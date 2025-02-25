@@ -11,8 +11,9 @@ public class ioBuffer {
     @Test
     void copy_pdf_to_another_pdf_buffer_stream() {
         // 记录开始时间
+        System.out.println("开始复制PDF文件");
         long start = System.currentTimeMillis();
-        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("/resources/C++ The Ultimate Beginners Guide to Learn C++ Programming Step-by-Step (Reed, Mark) (Z-Library).epub")); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("copy.pdf"))) {
+        try (BufferedInputStream bis = new BufferedInputStream(new FileInputStream("resources/C++ The Ultimate Beginners Guide to Learn C++ Programming Step-by-Step (Reed, Mark) (Z-Library).epub")); BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("copy.pdf"))) {
             int content;
             while ((content = bis.read()) != -1) {
                 bos.write(content);
@@ -29,7 +30,7 @@ public class ioBuffer {
     void copy_pdf_to_another_pdf_stream() {
         // 记录开始时间
         long start = System.currentTimeMillis();
-        try (FileInputStream fis = new FileInputStream("/resources/C++ The Ultimate Beginners Guide to Learn C++ Programming Step-by-Step (Reed, Mark) (Z-Library).epub"); FileOutputStream fos = new FileOutputStream("copy.pdf")) {
+        try (FileInputStream fis = new FileInputStream("resources/C++ The Ultimate Beginners Guide to Learn C++ Programming Step-by-Step (Reed, Mark) (Z-Library).epub"); FileOutputStream fos = new FileOutputStream("copy.pdf")) {
             int content;
             while ((content = fis.read()) != -1) {
                 fos.write(content);

@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
+
 public class io_test {
 
     public static void main(String[] args) throws IOException {
@@ -20,7 +21,7 @@ public class io_test {
             while ((content = fis.read()) != -1) {
                 System.out.println((char) content);
             }
-        } catch (IOException e) {
+                    } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -33,9 +34,9 @@ public class io_test {
             e.printStackTrace();
         }
 
-        //FileOutputStream
+        //FileOutputSream
         try (FileOutputStream output = new FileOutputStream("resources/output.txt")) {
-            byte[] array = "JavaGuide".getBytes();
+            byte[] array = "JavaGuide".getBytes("UTF-8");
             output.write(array);
         } catch (IOException e) {
             e.printStackTrace();
