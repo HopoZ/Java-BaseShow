@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/test
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: HITmanager
-    password: HITmanager
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 server:
   port: 8080
