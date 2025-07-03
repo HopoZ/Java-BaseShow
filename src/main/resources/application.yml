@@ -6,3 +6,7 @@ spring:
     password: ${DB_PASSWORD}
 server:
   port: 8080
+
+oss:
+  accesskeyId:${accesskeyId}
+  accessKeySecret:${accessKeySecret}

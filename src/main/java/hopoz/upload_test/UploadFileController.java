@@ -27,9 +27,9 @@ public class UploadFileController {
         if (file.isEmpty()) {
             return ResponseEntity.badRequest().body("文件为空");
         }
-        if (!isAllowedType(file.getContentType())) {
-            return ResponseEntity.badRequest().body("文件类型不允许");
-        }
+//        if (!isAllowedType(file.getContentType())) {
+//            return ResponseEntity.badRequest().body("文件类型不允许");
+//        }
         if (file.getSize() > 5 * 1024 * 1024) {
             return ResponseEntity.badRequest().body("文件过大");
         }
@@ -38,11 +38,15 @@ public class UploadFileController {
             File uploadDir = new File(UPLOAD_DIR);
             if (!uploadDir.exists()) uploadDir.mkdirs();
 
+            // 修改文件名防止本地有同名文件
             String filename = UUID.randomUUID() + "_" + file.getOriginalFilename();
             Path path = Paths.get(UPLOAD_DIR, filename);
 
-            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
+            //通过Files.copy方法存储文件到本地目录
+//            Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
+            //通过MultipartFile的方法存储文件
+            file.transferTo(new File("E:\\project\\code\\Java\\Java-BaseShow-SpringBoot\\uploads\\"+filename));
             return ResponseEntity.ok("上传成功：" + filename);
         } catch (IOException e) {
             log.error("文件上传失败", e);

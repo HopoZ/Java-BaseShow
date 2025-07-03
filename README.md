@@ -21,6 +21,7 @@ Spring Boot框架下的Java各种基础代码展示，可点击关键字查看�
 
 ### [序列化](./src/main/java/hopoz/test/serialization_test.java)
 
-### [上传文件](./src/main/java/hopoz/upload_test/UploadFileController.java)
+### [上传文件到后端](./src/main/java/hopoz/upload_test/UploadFileController.java)
 包括简单前端[上传文件前端](./src/main/resources/static/upload.html)
+### [上传文件到阿里云OSS](./src/main/java/hopoz/upload_test/OSSUploadFile.java)
 
